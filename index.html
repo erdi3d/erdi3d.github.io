@@ -7,30 +7,91 @@
 <style>
 
 body{
-font-family: Arial;
-background: white;
+font-family: Arial, sans-serif;
+background:white;
 margin:0;
 }
 
 header{
-background:white;
-padding:20px;
-font-size:35px;
+
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:20px 40px;
+border-bottom:1px solid #eee;
+
+}
+
+.logo{
+
+font-size:28px;
 font-weight:bold;
-border-bottom:1px solid #ddd;
+
+}
+
+.logo span{
+
+font-weight:normal;
+color:gray;
+
+}
+
+.whatsapp{
+
+background:black;
+color:white;
+padding:10px 15px;
+text-decoration:none;
+
+}
+
+.hero{
+
+padding:60px;
+text-align:center;
+
+}
+
+.hero h1{
+
+font-size:40px;
+margin:0;
+
+}
+
+.hero p{
+
+color:gray;
+
 }
 
 .urunler{
-padding:20px;
+
+padding:40px;
+text-align:center;
+
 }
 
 .urun{
 
-border:1px solid #ddd;
+border:1px solid #eee;
 display:inline-block;
+margin:15px;
 padding:15px;
-margin:10px;
 width:250px;
+transition:0.3s;
+
+}
+
+.urun:hover{
+
+box-shadow:0 0 10px rgba(0,0,0,0.1);
+
+}
+
+.urun img{
+
+width:100%;
 
 }
 
@@ -40,7 +101,16 @@ background:black;
 color:white;
 border:none;
 padding:10px;
+width:100%;
 cursor:pointer;
+
+}
+
+footer{
+
+text-align:center;
+padding:20px;
+color:gray;
 
 }
 
@@ -51,45 +121,75 @@ cursor:pointer;
 <body>
 
 <header>
-ERDİ 3D
+
+<div class="logo">
+ERDİ <span>3D</span>
+</div>
+
+<a href="https://wa.me/905XXXXXXXXX" class="whatsapp">
+WhatsApp
+</a>
+
 </header>
+
+<div class="hero">
+
+<h1>3D Baskı Ürünleri</h1>
+
+<p>Kişiye özel ve hazır 3D baskı modelleri</p>
+
+</div>
 
 <div class="urunler">
 
-<div class="urun">
 
-<img src="https://via.placeholder.com/200">
+<!-- ÜRÜN 1 -->
 
-<h3>Örnek 3D Baskı</h3>
-
-<p>150 TL</p>
-
-<a href="https://wa.me/905XXXXXXXXX">
-
-<button>
-Sipariş Ver
-</button>
-
-</a>
-
-</div>
-
-</div>
-
-</body>
-</html>
 <div class="urun">
 
 <img src="https://i.imgur.com/RyF4PvQ.jpg">
 
-<h3>Batman Maskesi</h3>
+<h3>Maske Modeli</h3>
 
-<p>250 TL</p>
+<p>200 TL</p>
 
-<a href="https://wa.me/905551112233">
+<a href="https://wa.me/905XXXXXXXXX">
 
 <button>Sipariş Ver</button>
 
 </a>
 
 </div>
+
+
+<!-- ÜRÜN 2 -->
+
+<div class="urun">
+
+<img src="https://via.placeholder.com/300">
+
+<h3>Garajlı Anahtarlık</h3>
+
+<p>100</p>
+
+<a href="https://wa.me/905XXXXXXXXX">
+
+<button>Sipariş Ver</button>
+
+</a>
+
+</div>
+
+
+</div>
+
+
+<footer>
+
+© 2026 ERDİ 3D
+
+</footer>
+
+
+</body>
+</html>
