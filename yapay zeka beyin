@@ -16,26 +16,37 @@ body {
 
 .beyin {
   position: relative;
-  width: 400px;
-  height: 400px;
+  width: 500px;
+  height: 500px;
   border-radius: 50%;
   background: radial-gradient(circle at center, #111 0%, #000 80%);
-  box-shadow: 0 0 60px #0ff inset;
+  box-shadow: 0 0 80px #0ff inset;
 }
 
-.norons {
+/* Nöronlar */
+.noron {
   position: absolute;
-  width: 4px;
-  height: 4px;
+  width: 6px;
+  height: 6px;
   background: #0ff;
+  border-radius: 50%;
+  animation: akis 3s linear infinite;
+}
+
+/* Nöronlar arası çizgiler */
+.cizgi {
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  background: linear-gradient(90deg, #0ff, #0ff, #f0f);
   border-radius: 50%;
   animation: akis 3s linear infinite;
 }
 
 @keyframes akis {
   0% { transform: translate(0,0) scale(0.5); opacity: 1; }
-  50% { transform: translate(calc(var(--x) * 1px), calc(var(--y) * 1px)) scale(1.5); opacity: 0.7; }
-  100% { transform: translate(calc(var(--x) * 2px), calc(var(--y) * 2px)) scale(0.5); opacity: 0; }
+  50% { transform: translate(var(--x), var(--y)) scale(1.5); opacity: 0.7; }
+  100% { transform: translate(calc(var(--x)*2), calc(var(--y)*2)) scale(0.5); opacity: 0; }
 }
 </style>
 </head>
@@ -44,17 +55,32 @@ body {
 <div class="beyin" id="beyin"></div>
 
 <script>
-// 200 tane "nöron" ekleyelim
+// Beyin elementini al
 const beyin = document.getElementById('beyin');
-for(let i=0;i<200;i++){
-  const noron = document.createElement('div');
-  noron.classList.add('norons');
-  // rastgele x ve y değerleri
-  noron.style.setProperty('--x', Math.random()*400 - 200);
-  noron.style.setProperty('--y', Math.random()*400 - 200);
-  // rastgele animasyon gecikmesi
-  noron.style.animationDelay = `${Math.random()*3}s`;
-  beyin.appendChild(noron);
+
+// 250 nöron oluştur
+for(let i=0;i<250;i++){
+  const n = document.createElement('div');
+  n.classList.add('noron');
+  let x = Math.random()*500 - 250;
+  let y = Math.random()*500 - 250;
+  n.style.setProperty('--x', x + 'px');
+  n.style.setProperty('--y', y + 'px');
+  n.style.animationDelay = `${Math.random()*3}s`;
+  n.style.background = `hsl(${Math.random()*360}, 100%, 60%)`;
+  beyin.appendChild(n);
+}
+
+// Nöronlar arası rastgele çizgiler
+for(let i=0;i<100;i++){
+  const c = document.createElement('div');
+  c.classList.add('cizgi');
+  let x = Math.random()*500 - 250;
+  let y = Math.random()*500 - 250;
+  c.style.setProperty('--x', x + 'px');
+  c.style.setProperty('--y', y + 'px');
+  c.style.animationDelay = `${Math.random()*3}s`;
+  beyin.appendChild(c);
 }
 </script>
 
