@@ -1,152 +1,155 @@
 <!DOCTYPE html>
+
 <html lang="tr">
 <head>
-</style>
 <meta charset="UTF-8">
-<title>ERDİ 3D</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ERDİ 3D | 3D Baskı Ürünleri</title>
 
 <style>
 
 body{
-font-family: Arial, sans-serif;
-background:white;
 margin:0;
+font-family:Arial, sans-serif;
+background:#f4f6f8;
 }
 
-header{
+/* HEADER */
 
+header{
+background:white;
 display:flex;
 justify-content:space-between;
 align-items:center;
-padding:20px 40px;
-border-bottom:1px solid #eee;
-
+padding:15px 40px;
+box-shadow:0 2px 10px rgba(0,0,0,0.1);
 }
 
 .logo{
-
 font-size:28px;
 font-weight:bold;
-
 }
 
 .logo span{
-
+color:#888;
 font-weight:normal;
-color:gray;
+}
 
+.social{
+display:flex;
+gap:10px;
+}
+
+.social a{
+display:flex;
+align-items:center;
+gap:5px;
+padding:10px 15px;
+color:white;
+text-decoration:none;
+border-radius:8px;
+font-weight:bold;
 }
 
 .whatsapp{
-  background:black;
-  color:white;
-  padding:10px 15px;
-  text-decoration:none;
+background:#25D366;
 }
 
-<!DOCTYPE html>
-<html>
-
-<head>
-
-<style>
-
-.insta-btn{
-  background:#E1306C;
-  color:white;
-  padding:10px 15px;
-  text-decoration:none;
-  display:inline-flex;
-  align-items:center;
-  gap:8px;
-  border-radius:8px;
-  font-weight:bold;
+.instagram{
+background:#E1306C;
 }
 
-.insta-btn img{
-  width:20px;
-  height:20px;
+.instagram img{
+width:20px;
 }
 
-</style>
+/* HERO */
 
-</head>
-
-<body>
-
-<a href="https://instagram.com/erdi_3_d" class="insta-btn" target="_blank">
-
-<img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png">
-
-erdi_3_d
-
-</a>
-
-</body>
-
-</html>
+.hero{
+text-align:center;
+padding:40px;
+background:white;
+margin-bottom:20px;
 }
 
 .hero h1{
-
-font-size:40px;
 margin:0;
-
+font-size:36px;
 }
 
 .hero p{
-
 color:gray;
-
 }
 
+/* PRODUCTS */
+
 .urunler{
-
-padding:40px;
-text-align:center;
-
+display:flex;
+flex-wrap:wrap;
+justify-content:center;
+gap:20px;
+padding:20px;
 }
 
 .urun{
-
-border:1px solid #eee;
-display:inline-block;
-margin:15px;
-padding:15px;
-width:250px;
+background:white;
+width:260px;
+border-radius:12px;
+overflow:hidden;
+box-shadow:0 2px 10px rgba(0,0,0,0.1);
+cursor:pointer;
 transition:0.3s;
-
 }
 
 .urun:hover{
-
-box-shadow:0 0 10px rgba(0,0,0,0.1);
-
+transform:scale(1.05);
 }
 
 .urun img{
-
 width:100%;
-
+height:200px;
+object-fit:cover;
 }
 
-button{
+.urun h3{
+margin:10px;
+}
 
+.urun p{
+margin:10px;
+color:#E1306C;
+font-weight:bold;
+}
+
+.btn{
+display:block;
+margin:10px;
 background:black;
 color:white;
-border:none;
+text-align:center;
 padding:10px;
-width:100%;
-cursor:pointer;
-
+text-decoration:none;
+border-radius:6px;
 }
 
-footer{
+/* MODAL */
 
-text-align:center;
-padding:20px;
-color:gray;
+.modal{
+display:none;
+position:fixed;
+background:rgba(0,0,0,0.8);
+width:100%;
+height:100%;
+top:0;
+left:0;
+justify-content:center;
+align-items:center;
+}
 
+.modal img{
+max-width:80%;
+max-height:80%;
+border-radius:10px;
 }
 
 </style>
@@ -158,172 +161,117 @@ color:gray;
 <header>
 
 <div class="logo">
+
 ERDİ <span>3D</span>
+
 </div>
-<a href="https://wa.me/05074869920" class="whatsapp">
+
+<div class="social">
+
+<a href="https://wa.me/905074869920" class="whatsapp">
+
 WhatsApp
+
 </a>
+
+<a href="https://instagram.com/erdi_3_d" class="instagram" target="_blank">
+
+<img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png">
+
+erdi_3_d
+
+</a>
+
+</div>
 
 </header>
 
 <div class="hero">
 
-  
 <h1>3D Baskı Ürünleri</h1>
 
-  
-<p>Kişiye özel ve hazır 3D baskı modelleri</p>
+<p>Kişiye özel ve hazır tasarımlar</p>
 
-  
 </div>
 
 <div class="urunler">
 
-
-<!-- ÜRÜN 1 -->
-
-<div class="urun">
+<div class="urun" onclick="buyut(this)">
 
 <img src="f5115294-6210-47c6-b08a-bbf20f3deeda.jpg">
 
-<h3>Minecraft Tavuk Modeli</h3>
+<h3>Minecraft Tavuk</h3>
 
 <p>150 TL</p>
 
-<a href="https://wa.me/05074869920">
+<a href="https://wa.me/905074869920" class="btn">
 
-<button>Sipariş Ver</button>
+Sipariş Ver
 
 </a>
 
 </div>
 
-
-<!-- ÜRÜN 2 -->
-
-<div class="urun">
+<div class="urun" onclick="buyut(this)">
 
 <img src="1_org_zoom.webp">
 
-<h3>Garajlı Anahtarlık</h3>
+<h3>Garaj Anahtarlık</h3>
 
-<p>100</p>
+<p>100 TL</p>
 
-<a href="https://wa.me/05074869920">
+<a href="https://wa.me/905074869920" class="btn">
 
-<button>Sipariş Ver</button>
+Sipariş Ver
 
 </a>
 
 </div>
 
+<div class="urun" onclick="buyut(this)">
+
+<img src="ad64a1f2-b055-46df-ad0e-1b0e58885b07.jpg">
+
+<h3>Takı Kutusu</h3>
+
+<p>150 TL</p>
+
+<a href="https://wa.me/905074869920" class="btn">
+
+Sipariş Ver
+
+</a>
 
 </div>
 
+</div>
 
-<footer>
+<div class="modal" id="modal" onclick="kapat()">
 
+<img id="modalImg">
 
-</footer>
+</div>
 
+<script>
+
+function buyut(el){
+
+document.getElementById("modal").style.display="flex";
+
+document.getElementById("modalImg").src=
+
+el.querySelector("img").src;
+
+}
+
+function kapat(){
+
+document.getElementById("modal").style.display="none";
+
+}
+
+</script>
 
 </body>
 
 </html>
-<div class="urun">
-
-<img src="ad64a1f2-b055-46df-ad0e-1b0e58885b07.jpg">
-
-<h3>Takı koyacağı</h3>
-
-<p>150 TL</p>
-
-<a href="https://wa.me/905074869920">
-
-<button></button>
-
-</a>
-
-</div>
-<div class="urun">
-
-<img src="b5195029-970a-460d-a959-5c9598b9b422.jpg">
-
-<h3>3D Hamur Yoğuracağı</h3>
-
-<p>150 TL</p>
-
-<a href="https://wa.me/905074869920">
-
-<button>Sipariş Ver</button>
-
-</a>
-
-</div>
-<div class="urun">
-
-<img src="dfe3e9f8-bb4a-4998-849b-39ccd8befd4a.jpg">
-
-<h3>Makjay eşyası Standı</h3>
-
-<p>150 TL</p>
-
-<a href="https://wa.me/905074869920">
-
-<button>Sipariş Ver</button>
-
-</a>
-
-</div>
-<div class="urun">
-
-<img src="036729ee-8e32-4261-8bff-6f06106a0fca.jpg">
-
-<h3>3D oyuncak</h3>
-
-<p>50 TL</p>
-
-<a href="https://wa.me/905074869920">
-
-<button>Sipariş Ver</button>
-
-</a>
-
-</div>
-<div class="urun">
-
-<img src="17526428-9606-4602-98b6-274b3ddd476c.jpg">
-
-<h3>3D Kahve Çekirdeği</h3>
-
-<p>25 TL</p>
-<a href="https://wa.me/905074869920">
-<button>Sipariş Ver</button>
-</a>
-
-</div>
-
-<div class="urun">
-
-<img src="https://hizliresim.com/38q6ofe">
-
-<h3>Timsah Kalemlik</h3>
-
-<p>150 TL</p>
-
-<a href="https://wa.me/905074869920">
-<button>Sipariş Ver</button>
-</a>
-
-</div>
-
-<a href="https://instagram.com/erdi_3_d" target="_blank" class="insta-btn">
-Instagram
-</a>
-
-
-<header>
-  <img src="10f0e9ac-e5c4-4457-8074-f1785940aa24.jpg" alt="Erdi3D Logo" height="60">
-</header>
-
-</body>
